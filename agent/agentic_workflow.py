@@ -1,4 +1,5 @@
 
+from dotenv import load_dotenv
 from utils.model_loader import ModelLoader
 from prompt_library.prompt import SYSTEM_PROMPT
 from langgraph.graph import StateGraph, MessagesState, END, START
@@ -8,8 +9,10 @@ from tools.place_search_tool import PlaceSearchTool
 from tools.expense_calculator_tool import CalculatorTool
 from tools.currency_conversion_tool import CurrencyConverterTool
 
+load_dotenv(override=True)
+
 class GraphBuilder():
-    def __init__(self,model_provider: str = "groq"):
+    def __init__(self, model_provider: str = "openai"):
         self.model_loader = ModelLoader(model_provider=model_provider)
         self.llm = self.model_loader.load_llm()
         

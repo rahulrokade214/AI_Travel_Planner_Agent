@@ -1,0 +1,26 @@
+Metadata-Version: 2.4
+Name: AI-TRAVEL-PLANNER
+Version: 0.0.1
+Author: sunny savita
+Author-email: snshrivas3365@gmail.com
+Requires-Dist: langchain
+Requires-Dist: langchain-community
+Requires-Dist: langchain-experimental
+Requires-Dist: fastapi
+Requires-Dist: python-dotenv
+Requires-Dist: streamlit
+Requires-Dist: uvicorn
+Requires-Dist: pydantic
+Requires-Dist: httpx
+Requires-Dist: requests
+Requires-Dist: langchain_google_community
+Requires-Dist: langchain_tavily
+Requires-Dist: langchain_groq
+Requires-Dist: langchain_openai
+Requires-Dist: langgraph
+Requires-Dist: langchain-google-community[places]
+Requires-Dist: streamlit-mic-recorder
+Requires-Dist: groq
+Dynamic: author
+Dynamic: author-email
+Dynamic: requires-dist
