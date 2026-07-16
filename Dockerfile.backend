@@ -27,5 +27,5 @@ COPY main.py ./
 ENV PORT=8080
 EXPOSE 8080
 
-# Render requires binding to 0.0.0.0:$PORT
+# Render requires binding to 0.0.0.0:$PORTgit show HEAD:Dockerfile.backenddir .dockerignore
 CMD exec uvicorn main:app --host 0.0.0.0 --port ${PORT}
