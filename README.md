@@ -1,8 +1,8 @@
 # AI Travel Planner
 
-An agentic AI trip-planning app: a LangGraph agent (FastAPI backend) that a
-Streamlit chat UI talks to. The agent decides when to call tools (search,
-places, etc.) before producing a final travel plan.
+🔗 Live Site: https://rahul-ai-powered-portfolio.onrender.com If the website is not working, please close it and open it again or reload it.
+
+🤖 AI-powered Travel Planner Agent built with LangGraph, FastAPI & Streamlit. Generates personalized itineraries, weather, attractions, budgets, and currency conversion.
 
 ```
 __start__ → agent ⇄ tools → __end__
