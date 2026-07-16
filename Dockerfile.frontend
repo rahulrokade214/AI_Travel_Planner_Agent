@@ -3,16 +3,19 @@ FROM python:3.12-slim
 
 WORKDIR /app
 
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+# Slim, frontend-only requirements — avoids pulling in langchain/langgraph/
+# agent deps and avoids the "-e ." editable install (which needs setup.py,
+# not copied into this build context, and previously broke the build).
+COPY requirements-frontend.txt ./
+RUN pip install --no-cache-dir -r requirements-frontend.txt
 
 COPY streamlit_app.py ./
 
 ENV PORT=8080
 EXPOSE 8080
 
-# Cloud Run requires binding to 0.0.0.0:$PORT, and Streamlit's own
-# CORS/XSRF protections need to be relaxed since Cloud Run sits behind
+# Render requires binding to 0.0.0.0:$PORT, and Streamlit's own
+# CORS/XSRF protections need to be relaxed since Render sits behind
 # its own HTTPS proxy.
 CMD exec streamlit run streamlit_app.py \
     --server.port=${PORT} \
